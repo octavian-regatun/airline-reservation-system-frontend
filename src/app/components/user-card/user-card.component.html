@@ -1,0 +1,17 @@
+<div
+  class="flex items-center p-2 hover:bg-neutral-200 rounded-full gap-2 transition-colors relative"
+  (mouseenter)="isOpen = true"
+  (mouseleave)="isOpen = false"
+>
+  <img
+    class="h-8 w-8"
+    src="https://static.vecteezy.com/system/resources/previews/020/911/740/original/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png"
+  />
+  <p>{{ user?.firstName }} {{ user?.lastName }}</p>
+  <div
+    *ngIf="isOpen"
+    class="absolute top-[48px] left-4 rounded p-4 border drop-shadow-lg bg-white"
+  >
+    <button class="button-danger" (click)="signOut()">Sign Out</button>
+  </div>
+</div>

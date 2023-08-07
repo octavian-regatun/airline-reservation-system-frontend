@@ -1,0 +1,13 @@
+<nav class="flex items-center px-4 h-16 bg-white drop-shadow-lg">
+  <div class="flex flex-1 gap-2">
+    <a class="button-primary" routerLink="/flights">Flights</a>
+    <a
+      class="button-primary"
+      *ngIf="user?.role === 'ADMIN'"
+      routerLink="/manage"
+    >
+      Manage
+    </a>
+  </div>
+  <app-user-card [user]="user"></app-user-card>
+</nav>

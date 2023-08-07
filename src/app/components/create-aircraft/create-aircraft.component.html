@@ -1,0 +1,27 @@
+<form
+  class="w-64 bg-white border rounded p-4 flex flex-col gap-4"
+  [formGroup]="form"
+  (ngSubmit)="handleSubmit()"
+>
+  <div class="flex flex-col">
+    <label>Brand</label>
+    <select class="input-text" formControlName="brand">
+      <option value="Boeing">Boeing</option>
+      <option value="Airbus">Airbus</option>
+    </select>
+  </div>
+  <div class="flex flex-col">
+    <label>Name</label>
+    <input class="input-text" type="text" formControlName="name" />
+  </div>
+  <div class="flex flex-col">
+    <label>Capacity</label>
+    <input class="input-text" type="number" formControlName="capacity" />
+  </div>
+  <div class="flex flex-col">
+    <label>Image URL</label>
+    <input class="input-text" type="text" formControlName="image" />
+  </div>
+  
+  <button type="submit" class="button-primary !w-full" [disabled]="form.invalid">Create Flight</button>
+</form>

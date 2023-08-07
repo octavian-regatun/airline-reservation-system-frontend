@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input-text {
+  @apply p-2 border border-black rounded;
+
+  &.ng-invalid.ng-touched{
+    @apply border-red-500 outline-red-500;
+  }
+}
+
+.button {
+  @apply rounded transition-colors w-fit h-fit px-4 py-2;
+  &-primary {
+    @extend .button;
+    @apply bg-black hover:bg-neutral-700 disabled:bg-neutral-500 text-white;
+  }
+  &-danger {
+    @extend .button;
+    @apply bg-red-500 hover:bg-red-600 disabled:bg-red-400 text-white;
+  }
+}
