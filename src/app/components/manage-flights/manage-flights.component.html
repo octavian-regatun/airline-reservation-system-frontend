@@ -2,8 +2,6 @@
   class="h-full gap-4 bg-white drop-shadow-lg border p-4 flex flex-col overflow-y-auto"
 >
   <p class="text-4xl">Flights</p>
-  <button class="button-primary" (click)="toggleShowCreate()">
-    New Flight
-  </button>
-  <app-create-flight *ngIf="showCreate"></app-create-flight>
+  <button class="button-primary" (click)="openDialog()">New Flight</button>
+  <app-create-flight-modal *ngIf="showCreate"></app-create-flight-modal>
 </div>

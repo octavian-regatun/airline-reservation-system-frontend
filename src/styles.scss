@@ -5,7 +5,7 @@
 .input-text {
   @apply p-2 border border-black rounded;
 
-  &.ng-invalid.ng-touched{
+  &.ng-invalid.ng-touched {
     @apply border-red-500 outline-red-500;
   }
 }
@@ -20,4 +20,13 @@
     @extend .button;
     @apply bg-red-500 hover:bg-red-600 disabled:bg-red-400 text-white;
   }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
