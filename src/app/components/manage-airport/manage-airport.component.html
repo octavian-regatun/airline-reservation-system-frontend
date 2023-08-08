@@ -1,0 +1,13 @@
+<div
+  class="h-full gap-4 bg-white drop-shadow-lg border p-4 flex flex-col overflow-y-auto rounded"
+>
+  <p class="text-4xl">Airports</p>
+  <button class="button-primary" (click)="toggleShowCreate()">
+    New Airport
+  </button>
+  <app-create-airport *ngIf="showCreate"></app-create-airport>
+  <app-airport-card
+    *ngFor="let airport of airports"
+    [airport]="airport"
+  ></app-airport-card>
+</div>

@@ -1,0 +1,56 @@
+<form
+  class="w-64 bg-white border rounded p-4 flex flex-col gap-4"
+  [formGroup]="form"
+  (ngSubmit)="handleSubmit()"
+>
+  <div class="flex flex-col">
+    <label>Name</label>
+    <input class="input-text" formControlName="name" />
+  </div>
+  <div formGroupName="location" class="flex flex-col gap-4">
+    <div class="flex flex-col">
+      <label>Latitude</label>
+      <input class="input-text" type="number" formControlName="latitude" />
+    </div>
+    <div class="flex flex-col">
+      <label>Longitude</label>
+      <input class="input-text" type="number" formControlName="longitude" />
+    </div>
+  </div>
+  <div class="flex flex-col">
+    <label>Country</label>
+    <input class="input-text" formControlName="country" />
+  </div>
+  <div class="flex flex-col">
+    <label>Municipality</label>
+    <input class="input-text" formControlName="municipality" />
+  </div>
+  <div class="flex flex-col">
+    <label>GPS Code</label>
+    <input class="input-text" formControlName="gpsCode" />
+  </div>
+  <div class="flex flex-col">
+    <label>IATA Code</label>
+    <input class="input-text" formControlName="iataCode" />
+  </div>
+  <div class="flex flex-col">
+    <label>Type</label>
+    <select class="input-text" formControlName="type">
+      <option value="SmallAirport">Small Airport</option>
+      <option value="MediumAirport">Medium Airport</option>
+      <option value="LargeAirport">Large Airport</option>
+      <option value="Heliport">Heliport</option>
+    </select>
+  </div>
+  <div class="flex flex-col">
+    <label>Image URL</label>
+    <input class="input-text" formControlName="image" />
+  </div>
+  <button
+    type="submit"
+    class="button-primary !w-full"
+    [disabled]="form.invalid"
+  >
+    Create Flight
+  </button>
+</form>

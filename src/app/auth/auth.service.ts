@@ -12,7 +12,7 @@ export type JwtDecoded = {
   sub: string;
 };
 
-export type UserRole = 'USER' | 'ADMIN';
+export type UserRole = 'User' | 'Admin';
 
 export type User = {
   id: number;

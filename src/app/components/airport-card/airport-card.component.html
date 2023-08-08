@@ -1,0 +1,16 @@
+<div class="bg-white border p-4 rounded flex h-full">
+  <div class="flex-1 h-full flex flex-col gap-4">
+    <div>
+      <p class="text-2xl">{{ airport?.name }}</p>
+      <p class="flex-1">Country: {{ airport?.country }}</p>
+      <p class="flex-1">Municipality: {{ airport?.municipality }}</p>
+    </div>
+    <button class="button-danger" (click)="handleDelete()">Delete</button>
+  </div>
+  <img
+    *ngIf="airport?.image"
+    src="{{ airport?.image }}"
+    alt="{{ airport?.name }}"
+    class="max-h-32"
+  />
+</div>

@@ -18,6 +18,9 @@ import { CreateFlightComponent } from './components/create-flight/create-flight.
 import { CreateAircraftComponent } from './components/create-aircraft/create-aircraft.component';
 import { ManageAircraftComponent } from './components/manage-aircraft/manage-aircraft.component';
 import { AircraftCardComponent } from './components/aircraft-card/aircraft-card.component';
+import { ManageAirportComponent } from './components/manage-airport/manage-airport.component';
+import { CreateAirportComponent } from './components/create-airport/create-airport.component';
+import { AirportCardComponent } from './components/airport-card/airport-card.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { AircraftCardComponent } from './components/aircraft-card/aircraft-card.
     CreateAircraftComponent,
     ManageAircraftComponent,
     AircraftCardComponent,
+    ManageAirportComponent,
+    CreateAirportComponent,
+    AirportCardComponent,
   ],
   imports: [
     BrowserModule,
