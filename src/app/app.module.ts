@@ -21,6 +21,7 @@ import { AircraftCardComponent } from './components/aircraft-card/aircraft-card.
 import { ManageAirportComponent } from './components/manage-airport/manage-airport.component';
 import { CreateAirportComponent } from './components/create-airport/create-airport.component';
 import { AirportCardComponent } from './components/airport-card/airport-card.component';
+import { ManageFlightsComponent } from './components/manage-flights/manage-flights.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AirportCardComponent } from './components/airport-card/airport-card.com
     ManageAirportComponent,
     CreateAirportComponent,
     AirportCardComponent,
+    ManageFlightsComponent,
   ],
   imports: [
     BrowserModule,

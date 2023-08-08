@@ -1,11 +1,14 @@
-<form class="w-64 bg-white border rounded p-4 flex flex-col gap-4">
+<form
+  class="w-64 bg-white border rounded p-4 flex flex-col gap-4"
+  [formGroup]="form"
+>
   <div class="flex flex-col">
-    <label>From</label>
-    <input class="input-text" />
-  </div>
-  <div class="flex flex-col">
-    <label>To</label>
-    <input class="input-text" />
+    <label>Aircraft</label>
+    <select class="input-text">
+      <option *ngFor="let aircraft of aircrafts">
+        {{ aircraft.brand + " " + aircraft.name }}
+      </option>
+    </select>
   </div>
   <button type="submit" class="button-primary !w-full">Create Flight</button>
 </form>

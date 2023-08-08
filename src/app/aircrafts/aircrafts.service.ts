@@ -8,17 +8,25 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class AircraftsService {
-  aircrafts = new Subject<Aircraft[]>();
+  aircrafts: Aircraft[] = [];
+  aircraftsSubject = new Subject<Aircraft[]>();
   showCreate = new Subject<boolean>();
 
   constructor(private http: HttpClient) {
+    this.aircraftsSubject.subscribe((aircrafts) => {
+      this.aircrafts = aircrafts;
+    });
+  }
+
+  getAircrafts() {
+    return [...this.aircrafts];
   }
 
   findAll() {
     return this.http
       .get<Aircraft[]>(environment.apiUrl + '/aircrafts')
       .subscribe((aircrafts) => {
-        this.aircrafts.next(aircrafts);
+        this.aircraftsSubject.next(aircrafts);
       });
   }
 
