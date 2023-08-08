@@ -5,7 +5,6 @@ import { AircraftsService } from 'src/app/aircrafts/aircrafts.service';
 @Component({
   selector: 'app-aircraft-card',
   templateUrl: './aircraft-card.component.html',
-  styleUrls: ['./aircraft-card.component.scss'],
 })
 export class AircraftCardComponent {
   @Input() aircraft: Aircraft | null = null;

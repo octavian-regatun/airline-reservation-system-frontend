@@ -5,7 +5,6 @@ import { AircraftsService } from 'src/app/aircrafts/aircrafts.service';
 @Component({
   selector: 'app-manage-aircraft',
   templateUrl: './manage-aircraft.component.html',
-  styleUrls: ['./manage-aircraft.component.scss'],
 })
 export class ManageAircraftComponent implements OnInit {
   showCreate = false;

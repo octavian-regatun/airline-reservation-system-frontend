@@ -5,7 +5,6 @@ import { AirportsService } from 'src/app/airports/airports.service';
 @Component({
   selector: 'app-manage-airport',
   templateUrl: './manage-airport.component.html',
-  styleUrls: ['./manage-airport.component.scss'],
 })
 export class ManageAirportComponent implements OnInit {
   showCreate = false;

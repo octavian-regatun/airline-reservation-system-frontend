@@ -6,7 +6,6 @@ import { AircraftsService } from 'src/app/aircrafts/aircrafts.service';
 @Component({
   selector: 'app-create-aircraft',
   templateUrl: './create-aircraft.component.html',
-  styleUrls: ['./create-aircraft.component.scss'],
 })
 export class CreateAircraftComponent {
   constructor(private aircraftService: AircraftsService) {}

@@ -5,7 +5,6 @@ import { AirportsService } from 'src/app/airports/airports.service';
 @Component({
   selector: 'app-airport-card',
   templateUrl: './airport-card.component.html',
-  styleUrls: ['./airport-card.component.scss'],
 })
 export class AirportCardComponent {
   @Input() airport: Airport | null = null;

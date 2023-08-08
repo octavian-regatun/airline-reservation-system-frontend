@@ -6,7 +6,6 @@ import { AirportsService } from 'src/app/airports/airports.service';
 @Component({
   selector: 'app-create-airport',
   templateUrl: './create-airport.component.html',
-  styleUrls: ['./create-airport.component.scss'],
 })
 export class CreateAirportComponent {
   form = new FormGroup({
