@@ -1,14 +1,17 @@
-<form
-  class="w-64 bg-white border rounded p-4 flex flex-col gap-4"
-  [formGroup]="form"
->
-  <div class="flex flex-col">
-    <label>Aircraft</label>
-    <select class="input-text">
-      <option *ngFor="let aircraft of aircrafts">
-        {{ aircraft.brand + " " + aircraft.name }}
-      </option>
-    </select>
-  </div>
-  <button type="submit" class="button-primary !w-full">Create Flight</button>
-</form>
+<div class="p-8 flex flex-col gap-4">
+  <p class="text-2xl text-center">Create Flight</p>
+  <form
+    class="w-64 rounded flex flex-col gap-4"
+    [formGroup]="form"
+  >
+    <div class="flex flex-col">
+      <label>Aircraft</label>
+      <select class="input-text">
+        <option *ngFor="let aircraft of aircrafts">
+          {{ aircraft.brand + " " + aircraft.name }}
+        </option>
+      </select>
+    </div>
+    <button type="submit" class="button-primary !w-full">Create Flight</button>
+  </form>
+</div>
