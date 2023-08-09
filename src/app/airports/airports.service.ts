@@ -8,18 +8,29 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class AirportsService {
-  airports: Subject<Airport[]> = new Subject<Airport[]>();
-  constructor(private http: HttpClient) {}
+  airports: Airport[] = [];
+  airportsSubject: Subject<Airport[]> = new Subject<Airport[]>();
 
-  create(airport: Airport) {
+  constructor(private http: HttpClient) {
+    this.airportsSubject.subscribe((airports) => {
+      this.airports = airports;
+    });
+  }
+
+  getAirports() {
+    return [...this.airports];
+  }
+
+  save(airport: Airport) {
     this.http
       .post<Airport>(environment.apiUrl + '/airports', airport)
-      .subscribe(() => this.findAll());
+      .subscribe(() => this.handleAirportsUpdate());
   }
-  findAll() {
+
+  handleAirportsUpdate() {
     this.http
       .get<Airport[]>(environment.apiUrl + '/airports')
-      .subscribe((airports) => this.airports.next(airports));
+      .subscribe((airports) => this.airportsSubject.next(airports));
   }
 
   findById(id: number) {
@@ -30,7 +41,7 @@ export class AirportsService {
     return this.http
       .delete<void>(environment.apiUrl + `/airports/${id}`)
       .subscribe(() => {
-        this.findAll();
+        this.handleAirportsUpdate();
       });
   }
 }

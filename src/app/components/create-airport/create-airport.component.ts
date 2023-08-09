@@ -25,6 +25,6 @@ export class CreateAirportComponent {
   constructor(private airportService: AirportsService) {}
 
   handleSubmit() {
-    this.airportService.create(this.form.value as unknown as Airport);
+    this.airportService.save(this.form.value as unknown as Airport);
   }
 }

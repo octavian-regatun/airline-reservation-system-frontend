@@ -24,6 +24,7 @@ import { AirportCardComponent } from './components/airport-card/airport-card.com
 import { ManageFlightsComponent } from './components/manage-flights/manage-flights.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FlightCardComponent } from './components/flight-card/flight-card.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     CreateAirportComponent,
     AirportCardComponent,
     ManageFlightsComponent,
+    FlightCardComponent,
   ],
   imports: [
     BrowserModule,

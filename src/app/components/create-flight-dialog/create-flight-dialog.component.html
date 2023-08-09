@@ -3,15 +3,68 @@
   <form
     class="w-64 rounded flex flex-col gap-4"
     [formGroup]="form"
+    (ngSubmit)="handleSubmit()"
   >
     <div class="flex flex-col">
       <label>Aircraft</label>
-      <select class="input-text">
-        <option *ngFor="let aircraft of aircrafts">
+      <select class="input-text" formControlName="aircraftId">
+        <option
+          [value]="aircraft.id"
+          *ngFor="let aircraft of aircraftService.aircrafts"
+        >
           {{ aircraft.brand + " " + aircraft.name }}
         </option>
       </select>
+      <span *ngIf="pickedAircraft">Available Seats: {{pickedAircraft?.capacity}}</span>
     </div>
-    <button type="submit" class="button-primary !w-full">Create Flight</button>
+    <div class="flex flex-col">
+      <label>Departure Airport</label>
+      <select class="input-text" formControlName="departureAirportId">
+        <option
+          [value]="airport.id"
+          *ngFor="let airport of airportService.airports"
+        >
+          {{ airport.name }}
+        </option>
+      </select>
+    </div>
+    <div class="flex flex-col">
+      <label>Arrival Airport</label>
+      <select class="input-text" formControlName="arrivalAirportId">
+        <option
+          [value]="airport.id"
+          *ngFor="let airport of airportService.airports"
+        >
+          {{ airport.name }}
+        </option>
+      </select>
+    </div>
+    <div class="flex flex-col">
+      <label>Departure Time</label>
+      <input
+        class="input-text"
+        type="datetime-local"
+        formControlName="departureTime"
+      />
+    </div>
+    <div class="flex flex-col">
+      <label>Arrival Time</label>
+      <input
+        class="input-text"
+        type="datetime-local"
+        formControlName="arrivalTime"
+      />
+    </div>
+    <div class="flex flex-col">
+      <label>Price</label>
+      <input class="input-text" type="number" formControlName="price" />
+    </div>
+    <button
+      type="submit"
+      class="button-primary !w-full"
+      [disabled]="form.invalid"
+    >
+      Create Flight
+    </button>
   </form>
 </div>

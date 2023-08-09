@@ -8,19 +8,14 @@ import { AircraftsService } from 'src/app/aircrafts/aircrafts.service';
 })
 export class ManageAircraftComponent implements OnInit {
   showCreate = false;
-  aircrafts: Aircraft[] = [];
 
-  constructor(private aircraftService: AircraftsService) {}
+  constructor(public aircraftService: AircraftsService) {}
 
   toggleShowCreate() {
     this.showCreate = !this.showCreate;
   }
 
   ngOnInit(): void {
-    this.aircraftService.aircraftsSubject.subscribe((aircrafts) => {
-      this.aircrafts = aircrafts;
-    });
-
     this.aircraftService.showCreate.subscribe((showCreate) => {
       this.showCreate = showCreate;
     });

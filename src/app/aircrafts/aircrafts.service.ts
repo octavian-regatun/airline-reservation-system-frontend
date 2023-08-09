@@ -9,24 +9,17 @@ import { Subject } from 'rxjs';
 })
 export class AircraftsService {
   aircrafts: Aircraft[] = [];
-  aircraftsSubject = new Subject<Aircraft[]>();
   showCreate = new Subject<boolean>();
 
   constructor(private http: HttpClient) {
-    this.aircraftsSubject.subscribe((aircrafts) => {
-      this.aircrafts = aircrafts;
-    });
+    this.updateAircrafts();
   }
 
-  getAircrafts() {
-    return [...this.aircrafts];
-  }
-
-  findAll() {
+  updateAircrafts() {
     return this.http
       .get<Aircraft[]>(environment.apiUrl + '/aircrafts')
       .subscribe((aircrafts) => {
-        this.aircraftsSubject.next(aircrafts);
+        this.aircrafts = aircrafts;
       });
   }
 
@@ -38,7 +31,7 @@ export class AircraftsService {
     return this.http
       .delete<void>(environment.apiUrl + `/aircrafts/${id}`)
       .subscribe(() => {
-        this.findAll();
+        this.updateAircrafts();
       });
   }
 
@@ -46,7 +39,7 @@ export class AircraftsService {
     return this.http
       .post<Aircraft>(environment.apiUrl + `/aircrafts`, aircraft)
       .subscribe(() => {
-        this.findAll();
+        this.updateAircrafts();
         this.setShowCreate(false);
       });
   }

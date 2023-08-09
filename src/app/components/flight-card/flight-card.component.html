@@ -1,0 +1,20 @@
+<div class="bg-white border p-4 rounded flex h-full">
+  <div class="flex-1 h-full flex flex-col gap-4">
+    <div>
+      <p class="text-2xl">
+        {{
+          flight?.departureAirport?.municipality +
+            ", " +
+            flight?.departureAirport?.country +
+            " ➡️ " +
+            flight?.arrivalAirport?.municipality +
+            ", " +
+            flight?.arrivalAirport?.country
+        }}
+      </p>
+      <!-- <p class="flex-1">Country: {{ flight?.country }}</p> -->
+      <!-- <p class="flex-1">Municipality: {{ flight?.municipality }}</p> -->
+    </div>
+    <button class="button-danger">Delete</button>
+  </div>
+</div>

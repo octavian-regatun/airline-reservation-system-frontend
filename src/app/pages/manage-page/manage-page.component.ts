@@ -19,7 +19,7 @@ export class ManagePageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.aircraftService.findAll();
-    this.airportService.findAll();
+    this.aircraftService.updateAircrafts();
+    this.airportService.handleAirportsUpdate();
   }
 }

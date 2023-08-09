@@ -17,7 +17,7 @@ export class ManageAirportComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.airportService.airports.subscribe((airports) => {
+    this.airportService.airportsSubject.subscribe((airports) => {
       this.airports = airports;
       console.log(airports);
     });
